@@ -13,8 +13,9 @@ import (
 
 	"github.com/golang/protobuf/proto"
 	pbdescriptor "github.com/golang/protobuf/protoc-gen-go/descriptor"
-	"github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
-	swagger_options "github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options"
+	"github.com/golang/protobuf/ptypes"
+	"github.com/kai-ding/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
+	swagger_options "github.com/kai-ding/grpc-gateway/protoc-gen-swagger/options"
 )
 
 var wktSchemas = map[string]schemaCore{
@@ -229,6 +230,22 @@ func renderMessagesAsDefinition(messages messageMap, d swaggerDefinitionsObject,
 				if opts.ExternalDocs.Url != "" {
 					schema.ExternalDocs.URL = opts.ExternalDocs.Url
 				}
+			}
+			if opts.JsonSchema != nil {
+				if opts.JsonSchema.Required != nil {
+					schema.Required = make([]string, len(opts.JsonSchema.Required))
+					for i, required := range opts.JsonSchema.Required {
+						schema.Required[i] = strings.ToLower(required)
+					}
+				}
+			}
+			if opts.Example != nil {
+				schema.Example = make(map[string]interface{})
+				var any ptypes.DynamicAny
+				ptypes.UnmarshalAny(opts.Example, any)
+				var example interface{}
+				json.Unmarshal(opts.Example.Value, &example)
+				schema.Example = example
 			}
 
 			// TODO(ivucica): add remaining fields of schema object

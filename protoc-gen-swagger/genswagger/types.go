@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 
-	"github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
+	"github.com/kai-ding/grpc-gateway/protoc-gen-grpc-gateway/descriptor"
 )
 
 type param struct {
@@ -178,6 +178,9 @@ type swaggerSchemaObject struct {
 
 	Description string `json:"description,omitempty"`
 	Title       string `json:"title,omitempty"`
+
+	Required []string    `json:"required,omitempty"`
+	Example  interface{} `json:"example,omitempty"`
 
 	ExternalDocs *swaggerExternalDocumentationObject `json:"externalDocs,omitempty"`
 }

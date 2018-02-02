@@ -5,7 +5,7 @@
     "version": "1.0",
     "contact": {
       "name": "gRPC-Gateway project",
-      "url": "https://github.com/grpc-ecosystem/grpc-gateway",
+      "url": "https://github.com/kai-ding/grpc-gateway",
       "email": "none@example.com"
     }
   },
@@ -76,7 +76,7 @@
         ],
         "externalDocs": {
           "description": "Find out more Echo",
-          "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+          "url": "https://github.com/kai-ding/grpc-gateway"
         }
       }
     },
@@ -289,7 +289,7 @@
         "deprecated": true,
         "externalDocs": {
           "description": "Find out more about GetQuery",
-          "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+          "url": "https://github.com/kai-ding/grpc-gateway"
         }
       }
     },
@@ -549,7 +549,7 @@
         ],
         "externalDocs": {
           "description": "Find out more Echo",
-          "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+          "url": "https://github.com/kai-ding/grpc-gateway"
         }
       },
       "post": {
@@ -580,7 +580,7 @@
         ],
         "externalDocs": {
           "description": "Find out more Echo",
-          "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+          "url": "https://github.com/kai-ding/grpc-gateway"
         }
       }
     },
@@ -833,7 +833,7 @@
       "title": "Intentionaly complicated message type to cover much features of Protobuf.\nNEXT ID: 30",
       "externalDocs": {
         "description": "Find out more about ABitOfEverything",
-        "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+        "url": "https://github.com/kai-ding/grpc-gateway"
       }
     },
     "examplepbBody": {
@@ -869,6 +869,6 @@
   },
   "externalDocs": {
     "description": "More about gRPC-Gateway",
-    "url": "https://github.com/grpc-ecosystem/grpc-gateway"
+    "url": "https://github.com/kai-ding/grpc-gateway"
   }
 }
